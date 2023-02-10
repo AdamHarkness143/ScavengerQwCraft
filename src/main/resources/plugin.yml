@@ -1,0 +1,82 @@
+name: ${project.name}
+version: ${project.version}
+description: ${project.description}
+author: cnaude, modwizcode, SirHedgehog, Xephi
+website: ${project.url}
+main: com.cnaude.scavenger.Scavenger
+loadbefore:
+  - ProtocolLib
+softdepend:
+  - Vault 
+  - Residence
+commands:
+  scavengerreload:
+    description: Reload config
+    usage: /scavengerreload
+    aliases: scvr
+  scvron:
+    description: Self enable item recovery.
+    usage: /scvron
+    aliases: scavengeron   
+  scvroff:
+    description: Self disable item recovery.
+    usage: /scvroff
+    aliases: scavengeroff
+  scvrlist:
+    description: List all pending recoveries.
+    usage: /scvrlist
+    aliases: scavengerlist
+  scvrdisable:
+    description: Disable Scavenger plugin.
+    usage: /scvrdisable
+    aliases: scavengerdisable
+  scvrenable:
+    description: Enable Scavenger plugin.
+    usage: /scvrenable
+    aliases: scavengerenable    
+  saveinv:
+    description: Manually save inventory.
+    alias: /saveinv
+  restoreinv:
+    description: Manually restore inventory.
+    alias: /restoreinv
+permissions:
+  scavenger.scavenge:
+    description: Allows players to automatically recover items on death.
+    default: false
+  scavenger.free:
+    description: Free item recovery.
+    default: false
+  scavenger.reload:
+    description: Reload config.
+    default: op
+  scavenger.disable:
+    description: Disable Scavenger.
+    default: op
+  scavenger.enable:
+    description: Enable Scavenger.
+    default: op
+  scavenger.level:
+    description: Allows players to automatically recover experience level on death.
+    default: false
+  scavenger.exp:
+    description: Allows players to automatically recover experience (towards next level) on death.
+    default: false
+  scavenger.self.on:
+    description: Allows players to enable item recovery for themselves.
+    default: false
+  scavenger.self.off:
+    description: Allows players to disable item recovery for themselves.
+    default: false
+  scavenger.list:
+    description: Allows players to list all pending recoveries.
+    default: op
+  scavenger.nochance:
+    description: Override chance to drop
+    default: false
+  scavenger.saveinv:
+    description: Allows players to use /saveinv command
+    default: op
+  scavenger.restoreinv:
+    description: Allows players to use /restoreinv command
+    default: op

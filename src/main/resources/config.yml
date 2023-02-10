@@ -1,0 +1,98 @@
+# Global settings.
+Global:
+  # Disable or enable Scavenger globally for all players
+  Enabled: true
+  # Whether or not to notify the player when their items are gathered and restored.
+  Notify: true
+  # Enable this for permission based drops. Players that have scavenger.drop.[ITEM_NAME] or scavenger.drop.[ITEM_NUMBER] will drop the item.
+  SingleItemDrops: false
+  # Enable this for permission based keeps. Players that have scavenger.keep.[ITEM_NAME] or scavenger.keep.[ITEM_NUMBER] will keep the item.
+  SingleItemKeeps: false
+  # Enabled slot based recovery. Players must have scavenger.armour.X, or scavenger.inv.X, where X is the slot number to recover.
+  SlotBasedRecovery: false
+  # Use OR method when checking for slots and single items. If true then an item is saved if it's in the correct slot or player has the permission for that item.
+  UseTheOrMethod: true
+  # Enable this to see what's going on
+  Debug: false
+  # Are we using permissions?
+  Permissions: true
+  OpsAllPerms: false
+  # If true then Scavenger will not recover items in a WorldGuard PVP zone.
+  WorldGuardPVPIgnore: false
+  # If true then restores only work in PVP zones.
+  WorldGuardPVPOnly: false
+  # If true then players drop items in enemy faction territory.
+  FactionEnemyDrops: false
+  # If true , drop items in DungeonMaze Worlds
+  DungeonMaze: false
+  # If true Scavenger search Authenticator / Auth plugin and hooked to, if not found, Scavenger works without them.
+  OfflineMode: false
+  # If true then Scavenger will attempt to hook into Residence and add the noscv flag.
+  Residence: false
+  # Flag name used with Residence
+  ResidenceFlag: noscv
+  # Load messages from a language. If the file does not exist just load defaults from this file. Check plugins/Scavenger/Languages for examples.
+  LanguageFile: english.yml  
+  # Drop items when killed by another player.
+  DropOnPVPDeath: false
+  # Restore delay in ticks. 
+  RestoreDelayTicks: 10
+  # Warn players they enter a blacklisted world
+  BlackListWarn: false
+# To split a message into multiple lines use the %NL% token.
+Messages:
+  MsgHeader: '&7[&6Scavenger&7] &f'
+  MsgRecovered: Your inventory has been restored.
+  MsgSaving: Saving your inventory.
+  MsgSaveForFee: Saving your inventory for a small fee of %COST% %CURRENCY%.
+  MsgNotEnoughMoney: Item recovery cost is %COST% and you only have %BALANCE% %CURRENCY%. (%ERRORMESSAGE%)
+  MsgInsidePA: You are inside PVP Arena %ARENA%. Scavenger will not save your inventory.
+  MsgInsideBA: You are inside a Battle Arena. Scavenger will not save your inventory.
+  MsgInsideMA: You are inside a Mob Arena. Scavenger will not save your inventory.
+  MsgInsideWGPVP: You are inside a WorldGuard PVP region. Scavenger will not save your inventory.
+  MsgInsideWGPVPOnly: You are not inside a WorldGuard PVP region. Scavenger will not save your inventory.
+  MsgInsideEnemyFaction: You died in enemy territory. Your items will be dropped!
+  MsgInsideDungeonMaze: You died in a DungeonMaze. Your items will be dropped!
+  MsgInsideRes: This residence does not allow item recovery! Dropping items!
+  MsgPVPDeath: Killed by another player! Dropping items.
+  MsgBlacklistedWorld: Scavenger is disabled in this world. Be careful.
+  MsgNoPerm: You do not have permissions to do this!
+  MsgSelfRecoveryEnabled: You have enabled item recovery for yourself!
+  MsgSelfRecoveryDisabled: You have disabled item recovery for yourself!
+Economy:
+    # Whether or not to use an economy system with the plugin.
+    Enabled: false
+    # Percentage mode
+    Percent: false
+    # The cost of restoring your inventory (if enabled).
+    RestoreCost: 10.0
+    # Minimum cost if using percent (0 for no min cost)
+    MinCost: 5.0    
+    # Maximum cost if using percent (0 for no max cost)
+    MaxCost: 0
+    # Percentage to withdraw
+    PercentCost: 5.0
+    # Calculate cost as MinCost + RestoreCost
+    AddMin: false
+    # Chance to drop item. Leave 0 for no chance. This is an integer value. If you enter 5 then the chance to drop is 1 out of 5.
+    ChanceToDrop: 0
+    # Deposit type: player, bank, none
+    DepositType: none
+    # Name of bank or player to deposit money taken from player
+    DepositDestination: '' 
+    # Number format
+    CountryCode: ''
+    # Number of decimal places to display
+    DecimalPlaces: 2
+# Drop item in these worlds
+BlacklistedWorlds:
+- put_here_worlds
+- that_you_want_blacklisted
+# Drop items in these WorldGuard regions
+BlacklistedWGRegions:
+- put_here_regions
+- that_you_want_blacklisted
+# Always save items in these worlds regardless of any condition
+WhiteListedWorlds:
+- put_here_worlds
+- that_you_want_whitelisted
